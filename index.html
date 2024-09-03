@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="error-div"></div>
+    <form id="filter-form" action="" method="get">
+        <label for="pagasts-input">Pagasts</label>
+        <input id="pagasts-input" type="text" name="pagasts">
+        <br>
+        <br>
+        <label for="istabas-input">Istabas</label>
+        <input id="istabas-input" type="number" name="istabas">
+        <br>
+        <br>
+        <label for="m2_min-input">min m2</label>
+        <input id="m2_min-input" type="number" name="m2_min">
+        <br>
+        <br>
+        <label for="m2_max-input">max m2</label>
+        <input id="m2_max-input" type="number" name="m2_max">
+        <br>
+        <br>
+        
+        <label for="cena_min-input">cena min</label>
+        <input id="cena_min-input" type="number" name="cena_min">
+        <br>
+        <br>
+        
+        <label for="cena_max-input">cena max</label>
+        <input id="cena_max-input" type="number" name="cena_max">
+        <br>
+        <br>
+        <label for="stavs_min-input">stavs min</label>
+        <input id="stavs_min-input" type="number" name="stavs_min">
+        <br>
+        <br>
+        <label for="stavs_max-input">stavs max</label>
+        <input id="stavs_max-input" type="number" name="stavs_max">
+        <br>
+        <br>
+        <button id="filter-btn">submit and filter</button>
+    </form>
+    <br>
+    <button class="btn">Click</button>
+    <br>
+    <div class="container">
+        
+    </div>
+    <section class="main-section" id="main-section">
+        <div class="item-card">
+            <div class="img-text-center">
+                <p class="itemData" id="title">Title here</p>
+                <img id="itemImg" src="" alt="">
+                <p class="itemData" id="pagasts">Pagasts here</p>
+                <p class="itemData" id="iela">Iela</p>
+                <p class="itemData" id="m2">m2</p>
+                <p class="itemData" id="istabas">istabas</p>
+                <p class="itemData" id="stavs">stavs</p>
+                <p class="itemData" id="serija">serija</p>
+                <p class="itemData" id="cena">cena</p>
+                <p class="itemData" id="m2cena">m2 cena</p>
+                <p class="itemData" id="createdAt">publicets: </p>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="src/main.ts" type="module"></script>
+</html>
