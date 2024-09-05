@@ -7,24 +7,20 @@ const url = "http://localhost/dashboard/ssParser/api/api.php?";
 
 const form  = document.querySelector<HTMLFormElement>("#filter-form")!;
 
-formQueryBuilder(form)
+formQueryBuilder(form).then((fullQueryUrl)=>{
+    console.log('Form submitted, query URL', fullQueryUrl);
+    fetchSSitem(fullQueryUrl).then((latestItems)=>{
+        console.log(latestItems)
+        displayItems(latestItems);
+        
+    })
+})
 
-// const section = document.querySelector<HTMLElement>("#main-section")!;
 
 const latestItems = await fetchSSitem(url);
 console.log(latestItems);
 
-// function displayLatest(latestItems: fetchedItem[]) {
-//   const newItems = latestItems
-//     .map((item: fetchedItem) => {
-//       console.log(item );
 
-//       return `<p>${item.title}</p>`;
-//     })
-//     .join("");
-//   section.innerHTML = newItems;
-//   console.log(newItems);
-  
-// }
 displayItems(latestItems)
+
 

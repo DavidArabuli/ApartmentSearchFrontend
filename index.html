@@ -6,47 +6,53 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <div class="nav-background"></div>
+        <section class="nav-section">
+            <div class="welcome-div">
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis itaque ducimus, tempore doloremque architecto labore non aliquid nobis quidem dolores quo maiores rerum a tenetur odit debitis vero odio suscipit.</p></section>
+            </div>
+    </nav>
     <div class="error-div"></div>
-    <form id="filter-form" action="" method="get">
-        <label for="pagasts-input">Pagasts</label>
-        <input id="pagasts-input" type="text" name="pagasts">
-        <br>
-        <br>
-        <label for="istabas-input">Istabas</label>
-        <input id="istabas-input" type="number" name="istabas">
-        <br>
-        <br>
-        <label for="m2_min-input">min m2</label>
-        <input id="m2_min-input" type="number" name="m2_min">
-        <br>
-        <br>
-        <label for="m2_max-input">max m2</label>
-        <input id="m2_max-input" type="number" name="m2_max">
-        <br>
-        <br>
-        
-        <label for="cena_min-input">cena min</label>
-        <input id="cena_min-input" type="number" name="cena_min">
-        <br>
-        <br>
-        
-        <label for="cena_max-input">cena max</label>
-        <input id="cena_max-input" type="number" name="cena_max">
-        <br>
-        <br>
-        <label for="stavs_min-input">stavs min</label>
-        <input id="stavs_min-input" type="number" name="stavs_min">
-        <br>
-        <br>
-        <label for="stavs_max-input">stavs max</label>
-        <input id="stavs_max-input" type="number" name="stavs_max">
-        <br>
-        <br>
-        <button id="filter-btn">submit and filter</button>
-    </form>
-    <br>
-    <button class="btn">Click</button>
-    <br>
+    <section class="form-section">
+
+        <form id="filter-form" action="" method="get">
+            <!-- <div class="input-div">
+
+            </div> -->
+            <label class="filter-label" for="pagasts-input">Pagasts</label>
+            <input class="filter-input" id="pagasts-input" type="text" name="pagasts">
+            
+            <label class="filter-label" for="istabas-input">Istabas</label>
+            <input class="filter-input" id="istabas-input" type="number" min="1" name="istabas">
+            
+            <label class="filter-label" for="m2_min-input">m2 min</label>
+            <input class="filter-input" id="m2_min-input" type="number" min="1" name="m2_min">
+            
+            <label class="filter-label" for="m2_max-input">m2 max</label>
+            <input class="filter-input" id="m2_max-input" type="number" min="1" name="m2_max">
+            
+            
+            <label class="filter-label" for="cena_min-input">cena min</label>
+            <input class="filter-input" id="cena_min-input" type="number" min="1" name="cena_min">
+            
+            
+            <label class="filter-label" for="cena_max-input">cena max</label>
+            <input class="filter-input" id="cena_max-input" type="number" min="1" name="cena_max">
+            
+            <label class="filter-label" for="stavs_min-input">stavs min</label>
+            <input class="filter-input" id="stavs_min-input" type="number" min="1" name="stavs_min">
+            
+            <label class="filter-label" for="stavs_max-input">stavs max</label>
+            <input class="filter-input" id="stavs_max-input" type="number" min="1" name="stavs_max">
+            <div class="btn-div">
+
+                <button id="filter-btn">submit and filter</button>
+            </div>
+        </form>
+    </section>
+    
     <div class="container">
         
     </div>
@@ -54,7 +60,7 @@
         <div class="item-card">
             <div class="img-text-center">
                 <p class="itemData" id="title">Title here</p>
-                <img id="itemImg" src="" alt="">
+                
                 <p class="itemData" id="pagasts">Pagasts here</p>
                 <p class="itemData" id="iela">Iela</p>
                 <p class="itemData" id="m2">m2</p>
@@ -64,8 +70,15 @@
                 <p class="itemData" id="cena">cena</p>
                 <p class="itemData" id="m2cena">m2 cena</p>
                 <p class="itemData" id="createdAt">publicets: </p>
+                <div class="img-div">
+
+                    <img id="itemImg" src="" alt="">
+                </div>
             </div>
         </div>
+    </section>
+    <section class="page-section">
+
     </section>
 </body>
 <script src="src/main.ts" type="module"></script>
