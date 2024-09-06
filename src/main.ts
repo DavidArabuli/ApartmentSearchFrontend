@@ -1,26 +1,17 @@
 import './style.css'
-
+import setDistrictOptions from './dstrictsOptions.ts';
 import { displayItems } from './displayLatest.ts';
-import { formQueryBuilder } from './form.js';
+import { setupFormListener } from './formHandler.js';
 import fetchSSitem from './fetchData.js';
 const url = "http://localhost/dashboard/ssParser/api/api.php?";
+// const urlDistricts = "http://localhost/dashboard/ssParser/api/api-districts.php";
 
-const form  = document.querySelector<HTMLFormElement>("#filter-form")!;
-
-formQueryBuilder(form).then((fullQueryUrl)=>{
-    console.log('Form submitted, query URL', fullQueryUrl);
-    fetchSSitem(fullQueryUrl).then((latestItems)=>{
-        console.log(latestItems)
-        displayItems(latestItems);
-        
-    })
-})
 
 
 const latestItems = await fetchSSitem(url);
 console.log(latestItems);
-
+setDistrictOptions()
 
 displayItems(latestItems)
 
-
+setupFormListener()
