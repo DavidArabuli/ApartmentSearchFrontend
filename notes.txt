@@ -1,0 +1,32 @@
+30.08.2024
+
+This is frontend part of SS RSS parsing and data gathering.
+Frontend, essentially, has to replicate SS.lv filter functionality, except, that there is only DB for Riga sales.
+
+have to create a form for filters and requirements submission, construct queries, fetch appropriate data from backend API, display it.
+
+31.08.2024
+Form and query construction finished.
+
+Current amount of entries is small atm, but have to think, where to implement pagination for future, on the frontend or on the backend.
+
+Another question, is whether to keep frontend as minimalistic as possible based on current needs, or prepare it for ALL the potential features and data amounts.
+For minimalistic I would stick with vanilla JS, but if backend will have data for different type of deals (not just Riga sales), for different cities, and more and more analytics, and the amount of data that will be kept in DB is going to increase - it might be worth switching to React\TS... ?
+
+On the other hand, the entries are very similar in their nature, and adhere to same template, so React might be an overkill... Currently, it would be, literally, one component with different text. 
+ Which would make it kind "using React for the sake of using React"... 
+
+3.09.2024
+Changed and converted code to typescript for practice purposes and potential growth of app.
+
+5.09.2024
+CSS foundations added
+Input validation added for numerical fields
+Slightly redone formQueryBuilder, to prepare for pagination and to store applied filters and page info
+
+6.09.2024
+Districts selector in a form is now populated from DB on a backend, through call to API and now provides only relevant existing districts.
+Redone form a bit, to fix an issue, where only first submitting was registered correctly.
+Now main section displays filtered form submission. 
+
+p.s. have to fix CSS on Form. Probably messed up a CSS class while moving things around. 
