@@ -14,7 +14,6 @@ body {
   background-color: var(--clr-grey-10);
 }
 img {
-    /* max-width: 17rem; */
     width: 100%;
     display: block;
     object-fit: cover;
@@ -39,32 +38,34 @@ img {
 .form-section{
     
     margin: 1rem;
-    
     background-color: antiquewhite;
     border: 1px solid red;
 }
+.input-div{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2rem;
 
+}
 .filter-input{
-    /* border: 1px dotted red; */
+    border: 1px dotted red;
     margin-left: 0.3rem;
-    justify-self: center;
 }
 .filter-label{
-    margin-left: 1rem;
-    
+        border: 1px dotted blue;
+        min-width: 4rem;
 }
 #filter-form{
     padding-top: 0.4rem;
     border: 1px solid blue;
     display: flex;
-    /* flex-direction: column; */
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap; 
     gap: 0.4rem;
-    justify-content: space-between;
-    text-align: left;
-    align-items: baseline;
-    max-width: 18rem;
+    max-width: 100%;
 }
 .btn-div{
     margin: 1rem;
@@ -85,14 +86,11 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-items: center;
-    justify-content: space-around; */
     flex-wrap: wrap;
     gap: 2rem;
 }
 .item-card{
     margin: 1rem;
-   
     max-width: 18rem;
     border: 1px solid orange;}
 
@@ -114,7 +112,6 @@ img {
     }
     .item-card{
     margin: 1rem;
-   
     max-width: 19rem;
     border: 1px solid orange;}
 }
