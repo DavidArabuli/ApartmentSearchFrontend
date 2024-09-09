@@ -1,9 +1,9 @@
 
 import {z} from 'zod';
-// const url: string = "http://localhost/dashboard/ssParser/api/api.php?";
 
 
-    const fetchedItemSchema = z.object({
+
+  const fetchedItemSchema = z.object({
     id: z.number(),
     link: z.string(),
     pub_date: z.string(),
@@ -19,41 +19,50 @@ import {z} from 'zod';
     hash: z.string(),
     created_at: z.string(),}) 
     
+
+  const paginationSchema = z.object({
+    current_page: z.union([z.string(), z.number()]),
+    page_limit: z.union([z.string(), z.number()]),
+    total_results: z.union([z.string(), z.number()]),
+    total_pages: z.union([z.string(), z.number()]),
+});
   
+const apiResponseSchema = z.object({
+  data: z.array(fetchedItemSchema),  // The array of fetched items
+  pagination: paginationSchema,      // The pagination object
+});
 
-export type fetchedItem =z.infer <typeof fetchedItemSchema>
+export type FetchedItem = z.infer<typeof fetchedItemSchema>;
+export type Pagination = z.infer<typeof paginationSchema>;
+export type ApiResponse = z.infer<typeof apiResponseSchema>;
 
 
 
-async function fetchSSitem (url:string) : Promise<fetchedItem[]> {
+async function fetchSSitem(url: string): Promise<ApiResponse> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error. Status: ${response.status}`);
     }
 
-    const rawData : fetchedItem[]  = await response.json();
-    const result = fetchedItemSchema.array().safeParse(rawData)
+    const rawData: unknown = await response.json();  // Fetch the raw data
+    const result = apiResponseSchema.safeParse(rawData);  // Validate the response with Zod
 
-    if(!result.success){
-      throw new Error(`Invalid data: ${result.error}`)
+    if (!result.success) {
+      throw new Error(`Invalid data: ${result.error}`);
     }
-     
-    console.log(result.data);
-    
+
+    console.log(result.data.data);
     return result.data;
   } catch (error) {
-    if(error instanceof Error){
-
+    if (error instanceof Error) {
       console.log(error.message);
-    } else{
+    } else {
       console.log('Unexpected error: ', error);
-      
     }
-    return [];
-
+    // Return a default object in case of an error
+    return { data: [], pagination: { current_page: 0, page_limit: 0, total_results: 0, total_pages: 0 } };
   }
-};
-
+}
 
 export default fetchSSitem;

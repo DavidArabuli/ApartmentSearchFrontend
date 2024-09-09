@@ -1,8 +1,8 @@
-import {type fetchedItem} from './fetchData'
+import {type FetchedItem} from './fetchData'
 
-export function displayItems(latestItems: fetchedItem[]) {
+export function displayItems(latestItems: FetchedItem[]) {
   const newItems = latestItems
-    .map((item: fetchedItem) => {
+    .map((item: FetchedItem) => {
       console.log(item );
 
       return `<div class="item-card">

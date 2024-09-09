@@ -30,3 +30,10 @@ Redone form a bit, to fix an issue, where only first submitting was registered c
 Now main section displays filtered form submission. 
 
 p.s. have to fix CSS on Form. Probably messed up a CSS class while moving things around. 
+
+7.09.2024
+Fixed CSS, cleaned and removed redundant rules.
+
+8.09.2024
+page links\buttons are generated dynamically now. 
+Page functionality works in fetching and displaying.

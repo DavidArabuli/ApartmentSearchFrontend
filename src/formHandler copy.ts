@@ -103,38 +103,30 @@ export function setupFormListener() {
         displayItems(filteredResults.data)
 
         const pageButtons = document.querySelector<HTMLDivElement>('#page-btns')!;
-
-if (pageButtons) {
-    pageButtons.innerHTML = '';
-    console.log(pageButtons);
-
-    let pageCount: number|string = filteredResults.pagination.total_pages;
-
-    // Create all pagination links
-    for (let i = 0; i < Number(pageCount); i++) {
-        let element = document.createElement('a');
-        element.href = `#`;
-        element.textContent = `${i + 1}`;
-        element.setAttribute('data-page', `${i + 1}`); // Store page number in a data attribute
-        pageButtons.append(element);
-    }
-
-    // Attach a single event listener to the parent element
-    pageButtons.addEventListener('click', async (event) => {
-        const target = event.target as HTMLElement;
-
-        // Check if a pagination link was clicked
-        if (target.tagName === 'A' && target.hasAttribute('data-page')) {
-            const pageNumber = target.getAttribute('data-page');
-            const newLink = `${fullQueryUrl}&page=${pageNumber}`;
-
-            const newItems = await fetchSSitem(newLink);
-            console.log(newItems.data);
-            displayItems(newItems.data);
-        }
-    });
+        if(pageButtons){
+            pageButtons.innerHTML = '';
+            console.log(pageButtons);
+           let pageCount:number|string = filteredResults.pagination.total_pages;
+           for (let i = 0; i < Number(pageCount); i++) {
+                let element = document.createElement('a');
+                element.href = `#`
+                element.textContent = `${i+1}`
+                let newLink = `${fullQueryUrl}&page=${i+1}`
+                element.addEventListener('click',async ()=>{
+                   let newItems = await fetchSSitem(newLink);
+                   console.log(newItems.data);
+                   console.log(newLink);
+                   console.log(newItems);
+                   console.log(newItems);
+                   
+                  displayItems(newItems.data);
+                })
+                pageButtons.append(element);
 }
-
+        } else{
+            console.log('element does not exist');
+            
+        }
         
 
     } catch (error) {

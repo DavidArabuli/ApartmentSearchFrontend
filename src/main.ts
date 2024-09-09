@@ -12,6 +12,6 @@ const latestItems = await fetchSSitem(url);
 console.log(latestItems);
 setDistrictOptions()
 
-displayItems(latestItems)
+displayItems(latestItems.data)
 
 setupFormListener()

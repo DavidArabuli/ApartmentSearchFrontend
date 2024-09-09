@@ -18,44 +18,60 @@
     <section class="form-section">
 
         <form id="filter-form" action="" method="get">
-            <!-- <div class="input-div">
+            <div class="input-div">
 
-            </div> -->
-            <label class="filter-label" for="pagasts-input">Pagasts</label>
-            <select class="filter-input" id="pagasts-input"  name="pagasts">
-                </select>
+                <label class="filter-label" for="pagasts-input">Pagasts</label>
+                <select class="filter-input"  id="pagasts-input"  name="pagasts">
+                    </select>
+            </div>
             
+            <div class="input-div">
+
             <label class="filter-label" for="istabas-input">Istabas</label>
             <input class="filter-input" id="istabas-input" type="number" min="1" name="istabas">
+            </div>
             
-            <label class="filter-label" for="m2_min-input">m2 min</label>
-            <input class="filter-input" id="m2_min-input" type="number" min="1" name="m2_min">
+            <div class="input-div">
+
+                <label class="filter-label" for="m2_min-input">m2 min</label>
+                <input class="filter-input" id="m2_min-input" type="number" min="1" name="m2_min">
+            </div>
+            <div class="input-div">
+
+                <label class="filter-label" for="m2_max-input">m2 max</label>
+                <input class="filter-input" id="m2_max-input" type="number" min="1" name="m2_max">
+            </div>
             
-            <label class="filter-label" for="m2_max-input">m2 max</label>
-            <input class="filter-input" id="m2_max-input" type="number" min="1" name="m2_max">
+            <div class="input-div">
+
+                <label class="filter-label" for="cena_min-input">cena min</label>
+                <input class="filter-input" id="cena_min-input" type="number" min="1" name="cena_min">
+            </div>
             
-            
-            <label class="filter-label" for="cena_min-input">cena min</label>
-            <input class="filter-input" id="cena_min-input" type="number" min="1" name="cena_min">
-            
-            
-            <label class="filter-label" for="cena_max-input">cena max</label>
-            <input class="filter-input" id="cena_max-input" type="number" min="1" name="cena_max">
-            
-            <label class="filter-label" for="stavs_min-input">stavs min</label>
-            <input class="filter-input" id="stavs_min-input" type="number" min="1" name="stavs_min">
-            
-            <label class="filter-label" for="stavs_max-input">stavs max</label>
-            <input class="filter-input" id="stavs_max-input" type="number" min="1" name="stavs_max">
+            <div class="input-div">
+
+                <label class="filter-label" for="cena_max-input">cena max</label>
+                <input class="filter-input" id="cena_max-input" type="number" min="1" name="cena_max">
+            </div>
+            <div class="input-div">
+
+                <label class="filter-label" for="stavs_min-input">stavs min</label>
+                <input class="filter-input" id="stavs_min-input" type="number" min="1" name="stavs_min">
+            </div>
+            <div class="input-div">
+
+                <label class="filter-label" for="stavs_max-input">stavs max</label>
+                <input class="filter-input" id="stavs_max-input" type="number" min="1" name="stavs_max">
+            </div>
             <div class="btn-div">
 
                 <button id="filter-btn">submit and filter</button>
             </div>
         </form>
-        <div class="page-div">
-            <a href="">1</a>
+        <div class="page-btn-div" id="page-btns">
+            <!-- <a href="">1</a>
             <a href="">2</a>
-            <a href="">3</a>
+            <a href="">3</a> -->
         </div>
     </section>
     

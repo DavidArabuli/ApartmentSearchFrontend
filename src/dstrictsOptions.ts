@@ -8,7 +8,7 @@ async function setDistrictOptions( ) {
     const selectorOptions = document.querySelector<HTMLSelectElement>("#pagasts-input")!;
     
     const newOptions = Object.values(options)
-  .map(value => `<option value="${value}">${value}</option>`)
+  .map(value => `<option label="${value}" value="${value}"></option>`)
   .join('');
     
     
