@@ -37,3 +37,6 @@ Fixed CSS, cleaned and removed redundant rules.
 8.09.2024
 page links\buttons are generated dynamically now. 
 Page functionality works in fetching and displaying.
+
+9.09.2024
+Added analytics page
