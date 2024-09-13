@@ -29,7 +29,7 @@ img {
     min-height: 3rem;
 }
 .welcome-div{
-    border: 1px solid purple;
+    
 }
 
 
@@ -39,10 +39,10 @@ img {
     
     margin: 1rem;
     background-color: antiquewhite;
-    border: 1px solid red;
+   
 }
 .input-div{
-    border: 2px solid red;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -51,16 +51,16 @@ img {
 
 }
 .filter-input{
-    border: 1px dotted red;
+    
     margin-left: 0.3rem;
 }
 .filter-label{
-        border: 1px dotted blue;
+        
         min-width: 4rem;
 }
 #filter-form{
     padding-top: 0.4rem;
-    border: 1px solid blue;
+    
     display: flex;
     flex-direction: column;
     flex-wrap: wrap; 
@@ -82,7 +82,7 @@ img {
     min-height: 7rem;
 }
 .main-section{
-    border: 1px dotted blue;
+   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,7 +92,7 @@ img {
 .item-card{
     margin: 1rem;
     max-width: 18rem;
-    border: 1px solid orange;}
+    }
 
 
 .itemData{
@@ -113,5 +113,58 @@ img {
     .item-card{
     margin: 1rem;
     max-width: 19rem;
-    border: 1px solid orange;}
+    
+}
+}
+
+
+/* Analytics page */
+
+.analytics-section{
+
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+
+}
+.analytics-info{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 25rem; 
+
+}
+.info-block{
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0.5rem; 
+    box-shadow: 3px 3px 5px darkgray;
+}
+.info-block:hover{
+    box-shadow: 3px 3px 5px rgb(44, 44, 44);
+    transform: translateX(0.06rem);
+}
+.analytics-item-title{
+    
+    text-align: left;
+    text-transform: capitalize;
+    /* flex-basis: 1; */
+}
+.analytics-item-info{
+    
+    text-align: right;
+    /* flex-basis: 0; */
+}
+
+.chartDiv{
+    margin: 2rem 1rem 1rem 1rem;
+    box-shadow: 3px 3px 5px darkgray;
+    border: 1px solid gray;
 }

@@ -1,5 +1,5 @@
-// fetchAnalyticsAPI.ts
-import { AnalyticsData } from './types';  // Import the type
+
+import { AnalyticsData } from './types';  
 
 export async function fetchAnalyticsAPI(url: string): Promise<AnalyticsData | null> {
   try {
