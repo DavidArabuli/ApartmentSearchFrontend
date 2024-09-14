@@ -115,7 +115,8 @@ if (pageButtons) {
         let element = document.createElement('a');
         element.href = `#`;
         element.textContent = `${i + 1}`;
-        element.setAttribute('data-page', `${i + 1}`); // Store page number in a data attribute
+        element.setAttribute('data-page', `${i + 1}`); 
+        element.classList.add('page-btn')// Store page number in a data attribute
         pageButtons.append(element);
     }
 

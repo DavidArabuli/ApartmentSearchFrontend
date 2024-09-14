@@ -18,6 +18,7 @@ export function displayItems(latestItems: FetchedItem[]) {
                 <p class="itemData" id="cena"><span class="data-title">Cena:</span> ${item.cena} euro</p>
                 <p class="itemData" id="m2cena"><span class="data-title">m2 cena:</span> ${(item.cena/item.m2).toFixed(2)} euro</p>
                 <p class="itemData" id="createdAt"><span class="data-title">Publicēts:</span> ${item.created_at} </p>
+                <p class="itemData" id="createdAt"><span class="data-title">Link:</span> <a href=${item.link}>see original ad</a> </p>
                 <div class="img-div">
 
                     <img id="itemImg" src="https://www.apartments.com/blog/sites/default/files/styles/x_large_hq/public/image/2023-06/ParkLine-apartment-in-Miami-FL.jpg?itok=kQmw64UU" alt="">
