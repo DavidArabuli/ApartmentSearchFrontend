@@ -22,5 +22,9 @@ export interface AnalyticsData {
     pagasts: string;
     average_price: number;
   }[];
+  averageM2PriceByDistrict: {
+    pagasts: string;
+    average_m2_price_by_district: number;
+  }[];
 }
 

@@ -64,6 +64,7 @@ analyticsDiv.appendChild(averageM2PriceDiv);
 
 export const mostSalesDistrict = data?.mostSalesDistrict;
 export const lowestAveragePriceDistrict = data?.lowestAveragePriceDistrict;
+export const averageM2PriceByDistrict = data?.averageM2PriceByDistrict;
 console.log(lowestAveragePriceDistrict);
 
 
