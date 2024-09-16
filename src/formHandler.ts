@@ -116,22 +116,33 @@ if (pageButtons) {
         element.href = `#`;
         element.textContent = `${i + 1}`;
         element.setAttribute('data-page', `${i + 1}`); 
-        element.classList.add('page-btn')// Store page number in a data attribute
+        element.classList.add('page-btn')
         pageButtons.append(element);
     }
 
-    // Attach a single event listener to the parent element
+   
     pageButtons.addEventListener('click', async (event) => {
         const target = event.target as HTMLElement;
 
-        // Check if a pagination link was clicked
+         
         if (target.tagName === 'A' && target.hasAttribute('data-page')) {
             const pageNumber = target.getAttribute('data-page');
-            const newLink = `${fullQueryUrl}&page=${pageNumber}`;
 
+            pageButtons.classList.add('disabled');
+            const newLink = `${fullQueryUrl}&page=${pageNumber}`;
+            try {
             const newItems = await fetchSSitem(newLink);
             console.log(newItems.data);
             displayItems(newItems.data);
+        } catch (error) {
+            console.error('Error fetching new items:', error);
+        } finally {
+            
+            pageButtons.classList.remove('disabled');
+        }
+            // const newItems = await fetchSSitem(newLink);
+            // console.log(newItems.data);
+            // displayItems(newItems.data);
         }
     });
 }
