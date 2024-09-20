@@ -25,7 +25,6 @@ body {
   font-size: 0.875rem;
   background-color: var(--calm-background);
   
- 
 }
 
 img {
@@ -329,6 +328,7 @@ border-radius: 10px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between; 
+     
     
 }
 
@@ -377,8 +377,37 @@ border-radius: 10px;
     margin: 2rem 1rem 1rem 1rem;
     box-shadow: 3px 3px 5px darkgray;
     border: 1px solid gray;
+     
+}
+.page-container{
+    position: relative;
+  min-height: 100vh;
 }
 
+/* ============ footer ========== */
+#space{
+    height: 100px;
+}
+.footer{
+     outline-style: groove;
+    outline-style: outset;
+    outline-width: 3px;
+    outline-color: rgb(238, 195, 139);
+    /* margin: 1rem; */
+    /* border: 1px solid red; */
+    /* padding: 1rem; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
+    
+}
+/* .fixed{
+    padding-top: 4rem;
+    position: fixed;
+} */
+.footer-contacts{}
+.footer-note{}
 
 /* =========== media query ========== */
 /* ============ 800px =============== */
@@ -390,6 +419,7 @@ border-radius: 10px;
     .main-section{
         flex-direction: row;
         align-items: flex-start;
+        padding-bottom: 2.5rem
     }
     .item-card{
     margin: 1rem;
@@ -405,6 +435,7 @@ border-radius: 10px;
         
     }
     .chartDiv{
+        
         
        min-width: 30rem;
     }

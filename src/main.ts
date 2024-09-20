@@ -1,4 +1,4 @@
-import './style.css'
+// import './style.css'
 import setDistrictOptions from './dstrictsOptions.ts';
 import { displayItems } from './displayLatest.ts';
 import { setupFormListener } from './formHandler.js';

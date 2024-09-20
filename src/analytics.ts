@@ -1,5 +1,5 @@
 import { fetchAnalyticsAPI } from './fetchAnalyticsAPI';
-import './style.css'
+// import './style.css'
 
 const analyticsSection = document.querySelector<HTMLElement>('#analytics-section')!;
 const analyticsDiv = document.querySelector<HTMLDivElement>('.analytics-info')!;

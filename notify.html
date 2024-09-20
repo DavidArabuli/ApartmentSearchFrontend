@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notify</title>
     <link rel="stylesheet" href="./src/style.css">
+    
 </head>
 <body>
     <nav class="nav-background">
         <div class="nav-div">
+            <h1>notify</h1>
+            <!--  -->
+
             <div class="decoratorWrap">
                 <div class="decoratorDiv"></div>
+             </div>
+            <!--  -->
+             <div class="navLinkDivWrap">
+                <div   div class="navLinkDiv">
+                    <a class="nav-link" href="/index.html">home</a>
+                </div>
+                <div class="navLinkDiv">
+                    <a class="nav-link" href="/analytics.html">analytics</a>
+                </div>
             </div>
-            <div class="navLinkDivWrap">
-
-            <div class="navLinkDiv">
-                <a class="nav-link" href="/analytics.html">analytics</a>
-            </div>
-             <div class="navLinkDiv">
-                <a class="nav-link" href="/about.html">about</a>
-            </div>
-        </div>
+            
            
         </div>
     </nav>
@@ -29,14 +34,11 @@
 
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis itaque ducimus, tempore doloremque architecto labore non aliquid nobis quidem dolores quo maiores rerum a tenetur odit debitis vero odio suscipit.</p>
         </div>
-    </section>
-    <div class="page-container">
-
-    
-    <div class="error-div"></div>
-    <section class="form-section">
-
-        <form id="filter-form" action="" method="get">
+        </section>
+    <section class="main-section">
+        <section class="form-section">
+            
+         <form id="notify-form" action="" method="post">
             <div class="input-div">
 
                 <label class="filter-label" for="pagasts-input">Pagasts</label>
@@ -82,56 +84,39 @@
                 <label class="filter-label" for="stavs_max-input">stavs max</label>
                 <input class="filter-input" id="stavs_max-input" type="number" min="1" name="stavs_max">
             </div>
+            <div class="input-div">
+
+                <label class="filter-label" for="email">email</label>
+                <input class="filter-input" id="email"  type="email">
+            </div>
+            <div class="input-div">
+
+                <label class="filter-label" for="email_confirmation">confirm email</label>
+                <input class="filter-input" id="email_confirmation" type="email">
+            </div>
             <div class="btn-div">
 
                 <button id="filter-btn" class="btn">submit and filter</button>
             </div>
         </form>
-        <div class="page-btn-div" id="page-btns">
-            <!-- <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a> -->
-        </div>
+        </section>
     </section>
-    
-    <div class="container">
-        
-    </div>
-    <section class="main-section" id="main-section">
-        <div class="item-card">
-            <div class="img-text-center">
-                <p class="itemData" id="title">Title here</p>
-                
-                <p class="itemData" id="pagasts">Pagasts here</p>
-                <p class="itemData" id="iela">Iela</p>
-                <p class="itemData" id="m2">m2</p>
-                <p class="itemData" id="istabas">istabas</p>
-                <p class="itemData" id="stavs">stavs</p>
-                <p class="itemData" id="serija">serija</p>
-                <p class="itemData" id="cena">cena</p>
-                <p class="itemData" id="m2cena">m2 cena</p>
-                <p class="itemData" id="createdAt">publicets: </p>
-                <div class="img-div">
-
-                    <img id="itemImg" src="" alt="">
-                </div>
+        <footer class="footer">
+            <div class="footer-contacts">
+              <p class="footer-note">
+                source code and other modding tools for different games in the future:
+              </p>
+              <a class="github-link" href="https://github.com/DavidArabuli">
+                https://github.com/DavidArabuli
+              </a>
             </div>
-        </div>
-    </section> 
-    <!-- <section class="page-section">
-
-    </section> -->
-    <footer class="footer">
-    <div class="footer-contacts">
-      <p class="footer-note">
-        source code and other modding tools for different games in the future:
-      </p>
-      <a class="github-link" href="https://github.com/DavidArabuli">
-        https://github.com/DavidArabuli
-      </a>
-    </div>
-  </footer>
-  </div>
+          </footer>
 </body>
-<script src="src/main.ts" type="module"></script>
+<script src="src/notify.ts" type="module"></script>
 </html>
+
+
+<!-- <form id="notify-form" action="http://localhost/dashboard/ssParser/api/api-notify.php" method="POST">
+                <input type="text" name="param1" id="param1">
+                <button>submit</button>
+            </form> -->
