@@ -4,7 +4,7 @@ import { displayItems } from './displayLatest.ts';
 import { setupFormListener } from './formHandler.js';
 import fetchSSitem from './fetchData.js';
 
-const url = "http://localhost/dashboard/ssParser/api/api.php?";
+const url = "http://localhost:8000/api/listings?";
 // const urlDistricts = "http://localhost/dashboard/ssParser/api/api-districts.php";
 
 

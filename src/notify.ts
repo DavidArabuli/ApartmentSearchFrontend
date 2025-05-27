@@ -1,5 +1,6 @@
 
 import setDistrictOptions from './dstrictsOptions.ts';
+import setSeriesOptions from './seriesOptions.ts';
 
 // import fetchSSitem from './fetchData.js';
 // import { displayItems } from './displayLatest.ts';
@@ -16,6 +17,7 @@ export function setupFormListener() {
     const cenaMaxInput = document.querySelector<HTMLInputElement>("#cena_max-input");
     const stavsMinInput = document.querySelector<HTMLInputElement>("#stavs_min-input");
     const stavsMaxInput = document.querySelector<HTMLInputElement>("#stavs_max-input");
+    const serijaInput = document.querySelector<HTMLInputElement>("#serija-input");
     const email = document.querySelector<HTMLInputElement>("#email");
     const email_confirmation = document.querySelector<HTMLInputElement>("#email_confirmation");
  console.log("Email input field: ", email);
@@ -117,6 +119,15 @@ export function setupFormListener() {
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
+        if(serijaInput?.value){
+            const serijaValue = serijaInput?.value
+            if(serijaValue.length > 20){
+                alert('invalid input!');
+                return;
+            } else{
+                formData.append('serija', serijaInput.value);
+            }
+        } 
     }
     try {
         const response = await fetch(url, {
@@ -144,6 +155,7 @@ export function setupFormListener() {
 
 setupFormListener()
 setDistrictOptions()
+setSeriesOptions()
 
 
 

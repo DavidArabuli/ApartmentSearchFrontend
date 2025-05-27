@@ -1,10 +1,12 @@
 
  
- async function fetchDistricts (url:string):Promise<{ [key: string]: string }> {
+async function fetchDistricts (url:string):Promise<{ [key: string]: string }> {
     try {
         const response = await fetch(url)
         const data = await response.json()
-        return data
+        // console.log(data.data);
+        
+        return data.data
 
     }
     catch(error){

@@ -1,7 +1,7 @@
 import fetchSSitem from './fetchData.js';
 import { displayItems } from './displayLatest.ts';
 
-const url = "http://localhost/dashboard/ssParser/api/api.php?";
+const url = "http://localhost:8000/api/listings?";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#filter-form")!;
@@ -20,12 +20,12 @@ export function setupFormListener() {
 
     if (pagastsInput?.value) {
 
-        queryArray.push(`pagasts=${encodeURIComponent(pagastsInput.value)}`);
+        queryArray.push(`district=${encodeURIComponent(pagastsInput.value)}`);
         }
         if (istabasInput?.value) {
         const istabasValue = parseInt(istabasInput.value, 10)
         if(Number.isInteger(istabasValue) && istabasValue >0 &&istabasInput?.value.length < 6){
-        queryArray.push(`istabas=${encodeURIComponent(istabasInput.value)}`);
+        queryArray.push(`rooms=${encodeURIComponent(istabasInput.value)}`);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -54,7 +54,7 @@ export function setupFormListener() {
         const cenaMinValue = parseInt(cenaMinInput.value, 10);
         if(Number.isInteger(cenaMinValue) && cenaMinValue >0 && cenaMinInput?.value.length < 6){
 
-        queryArray.push(`cena_min=${encodeURIComponent(cenaMinInput.value)}`);
+        queryArray.push(`price_min=${encodeURIComponent(cenaMinInput.value)}`);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -64,7 +64,7 @@ export function setupFormListener() {
         const cenaMaxValue = parseInt(cenaMaxInput.value, 10);
         if(Number.isInteger(cenaMaxValue) && cenaMaxValue >0 && cenaMaxInput?.value.length < 6){
 
-        queryArray.push(`cena_max=${encodeURIComponent(cenaMaxInput.value)}`);
+        queryArray.push(`price_max=${encodeURIComponent(cenaMaxInput.value)}`);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -74,7 +74,7 @@ export function setupFormListener() {
         const stavsMinValue = parseInt(stavsMinInput.value, 10);
         if(Number.isInteger(stavsMinValue) && stavsMinValue >0 && stavsMinInput?.value.length < 6){
 
-        queryArray.push(`stavs_min=${encodeURIComponent(stavsMinInput.value)}`);
+        queryArray.push(`floor_min=${encodeURIComponent(stavsMinInput.value)}`);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -84,7 +84,7 @@ export function setupFormListener() {
         const stavsMaxValue = parseInt(stavsMaxInput.value, 10);
         if(Number.isInteger(stavsMaxValue) && stavsMaxValue >0 && stavsMaxInput?.value.length < 6){
 
-        queryArray.push(`stavs_max=${encodeURIComponent(stavsMaxInput.value)}`);
+        queryArray.push(`floor_max=${encodeURIComponent(stavsMaxInput.value)}`);
         }else{
             alert('Input has to be a positive number and less than 9 character long');
             return;

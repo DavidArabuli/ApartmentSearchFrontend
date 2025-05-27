@@ -3,7 +3,7 @@ import { fetchAnalyticsAPI } from './fetchAnalyticsAPI';
 
 const analyticsSection = document.querySelector<HTMLElement>('#analytics-section')!;
 const analyticsDiv = document.querySelector<HTMLDivElement>('.analytics-info')!;
-const url = 'http://localhost/dashboard/ssParser/api/api-analytics.php';
+const url = 'http://localhost:8000/api/analytics';
 
 // Fetch data from the API
 const data = await fetchAnalyticsAPI(url);

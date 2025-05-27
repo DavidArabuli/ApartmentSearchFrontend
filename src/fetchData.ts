@@ -6,16 +6,16 @@ import {z} from 'zod';
   const fetchedItemSchema = z.object({
     id: z.number(),
     link: z.string(),
-    pub_date: z.string(),
+    pubDate: z.string(),
     title: z.string(),
     imgSrc: z.string(),
-    pagasts: z.string(),
-    iela: z.string(),
-    istabas: z.number(),
+    district: z.string(),
+    street: z.string(),
+    rooms: z.number(),
     m2: z.number(),
-    stavs: z.string(),
-    serija: z.string(),
-    cena: z.number(),
+    floor: z.string(),
+    series: z.string(),
+    price: z.number(),
     hash: z.string(),
     created_at: z.string(),}) 
     

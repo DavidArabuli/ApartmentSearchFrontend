@@ -9,7 +9,7 @@ export function createChartMostSales() {
         return;
     }
     
-    const xValues = mostSalesDistrict?.map((position) => position.pagasts);
+    const xValues = mostSalesDistrict?.map((position) => position.district);
     const yValues = mostSalesDistrict?.map((position) => position.offer_count);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 
@@ -63,7 +63,7 @@ export function createChartLowestAvg() {
         return;
     }
     
-    const xValues = lowestAveragePriceDistrict?.map((position) => position.pagasts);
+    const xValues = lowestAveragePriceDistrict?.map((position) => position.district);
     const yValues = lowestAveragePriceDistrict?.map((position) => Math.round(position.average_price*100)/100);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 
@@ -116,7 +116,7 @@ export function createChartAvgM2PriceByDistrict() {
         return;
     }
     
-    const xValues = averageM2PriceByDistrict?.map((position) => position.pagasts);
+    const xValues = averageM2PriceByDistrict?.map((position) => position.district);
     const yValues = averageM2PriceByDistrict?.map((position) => Math.round(position.average_m2_price_by_district *100)/100);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 

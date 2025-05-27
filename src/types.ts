@@ -1,7 +1,10 @@
 
 
 export interface AnalyticsData {
-   averageM2: Record<string, number>;  // Key is a string, value is a number
+  //  averageM2: Record<string, number>;  
+  averageM2: {
+    averageM2: number;
+  };
   averagePrice: {
     averagePrice: number;
   };

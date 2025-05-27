@@ -16,18 +16,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-    /* height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column; */
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    font-size: 100%;
-}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -35,10 +24,7 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
   background-color: var(--calm-background);
-   height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  
 }
 
 img {
@@ -65,8 +51,7 @@ img {
     flex-wrap: wrap;
     flex-direction: column;
     gap: 0.5rem; 
-    max-width: 80rem;
-    
+     max-width: 80rem;
     /* height: 500px; */
     
 }
@@ -78,7 +63,7 @@ img {
 .navLinkDiv {
    
     margin: 1rem;
-    background-color: burlywood;
+     background-color: burlywood;
     border-radius: 10%;
     width: 9rem;
     height: 4rem;
@@ -111,7 +96,7 @@ img {
 }
 
 .decoratorWrap{
-width: 10rem;
+   width: 20rem;
 height: 9rem;
 margin: 0.5rem;
 outline-style: groove;
@@ -124,12 +109,12 @@ filter: drop-shadow(var(--stronger-shadow));
 .decoratorDiv{
     background-color: var(--decor-color-1);
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+   height: 100%;
+   border-radius: 10px;
     /* outline-style: inset; */
     /* z-index: 6; */
     /* position:absolute; */
-    clip-path: polygon(0% 100%, 0% 71%, 14% 71%, 14% 92%, 23% 92%, 23% 100%, 23% 53%, 37% 53%, 37% 98%, 43% 98%, 43% 84%, 53% 84%, 53% 99%, 53% 32%, 71% 32%, 71% 90%, 80% 90%, 80% 53%, 100% 53%, 100% 100%);
+   clip-path: polygon(0% 100%, 0% 71%, 14% 71%, 14% 92%, 23% 92%, 23% 100%, 23% 53%, 37% 53%, 37% 98%, 43% 98%, 43% 84%, 53% 84%, 53% 99%, 53% 32%, 71% 32%, 71% 90%, 80% 90%, 80% 53%, 100% 53%, 100% 100%);
 }
 /* chart clip */
 
@@ -153,12 +138,12 @@ border-radius: 10px;
 .Navchart-clip{
     background-color: var(--decor-color-1);
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
-        /* outline-style: inset; */
-        /* z-index: 6; */
-        /* position:absolute; */
-    clip-path: polygon(60% 0%, 60% 15%, 80% 15%, 80% 30%, 55% 30%, 55% 45%, 90% 45%, 90% 60%, 95% 60%, 95% 75%, 90% 75%, 80% 75%, 80% 90%,85% 90%, 85% 100%, 0% 100%, 0% 0%);
+   height: 100%;
+   border-radius: 10px;
+    /* outline-style: inset; */
+    /* z-index: 6; */
+    /* position:absolute; */
+   clip-path: polygon(60% 0%, 60% 15%, 80% 15%, 80% 30%, 55% 30%, 55% 45%, 90% 45%, 90% 60%, 95% 60%, 95% 75%, 90% 75%, 80% 75%, 80% 90%,85% 90%, 85% 100%, 0% 100%, 0% 0%);
 }
 
 /* form button */
@@ -182,9 +167,12 @@ border-radius: 10px;
     border-radius: 10%;
     color: black;
     text-align: center;
+     
     /* -webkit-text-stroke: 0.4px goldenrod; */
     text-shadow: 0.5px 0.5px 4px rgba(218, 165, 32, 0.514) ;
+     
     box-shadow: 0 5px 15px rgba(17, 16, 16, 0.993);
+    
     display: flex;          
     justify-content: center; 
     align-items: center;    
@@ -340,6 +328,7 @@ border-radius: 10px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between; 
+     
     
 }
 
@@ -388,13 +377,11 @@ border-radius: 10px;
     margin: 2rem 1rem 1rem 1rem;
     box-shadow: 3px 3px 5px darkgray;
     border: 1px solid gray;
-    }
+     
+}
 .page-container{
-    flex: 1; /* Grow and fill available space */
-    display: flex;
-    flex-direction: column;
-    /* position: relative;
-  min-height: 100vh; */
+    position: relative;
+  min-height: 100vh;
 }
 
 /* ============ footer ========== */
@@ -402,77 +389,61 @@ border-radius: 10px;
     height: 100px;
 }
 .footer{
-    position: relative;
-    background-color: #f4f4f4; /* example */
-    padding: 1em;
-    text-align: center;
-    /* background-color: #f1f1f1;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    outline-style: groove;
+     outline-style: groove;
     outline-style: outset;
     outline-width: 3px;
-    outline-color: rgb(238, 195, 139); */
+    outline-color: rgb(238, 195, 139);
     /* margin: 1rem; */
     /* border: 1px solid red; */
     /* padding: 1rem; */
-    /* position: absolute;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;   */
+    height: 2.5rem;  
     
 }
 /* .fixed{
     padding-top: 4rem;
     position: fixed;
 } */
-.footer-contacts{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.footer-contacts{}
 .footer-note{}
 
 /* =========== media query ========== */
 /* ============ 800px =============== */
 @media screen and (min-width: 800px) and (max-width: 1377px) {
     body{
+        
         font-size: 0.950rem;;
     }
     .main-section{
         flex-direction: row;
-        /* align-items: flex-start; */
+        align-items: flex-start;
         padding-bottom: 2.5rem
     }
     .item-card{
-        margin: 1rem;
-        max-width: 19rem;
+    margin: 1rem;
+    max-width: 19rem;
     
     }
     .chart-section{
-        /* display: flex;
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        height: 40rem; */
-        flex-grow: 1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin-bottom: 2rem;
+        height: 40rem;
         
     }
     .chartDiv{
-        min-width: 30rem;
+        
+        
+       min-width: 30rem;
     }
     .nav-div{
     
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row-reverse; */
+    flex-direction: row-reverse;
     justify-content: space-between;
     background-color: cadetblue;
 }
@@ -497,8 +468,7 @@ border-radius: 10px;
 }
 .navLinkDivWrap{
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    
 }
 .nav-link {
     /* flex-shrink: 1; */
@@ -515,8 +485,8 @@ border-radius: 10px;
     box-shadow: 0 5px 15px rgba(17, 16, 16, 0.993);
     font-weight: 700;
     display: flex;          
-    /* justify-content: center; 
-    align-items: center;  */
+    justify-content: center; 
+    align-items: center; 
 }
 .nav-link:hover{
     box-shadow: 0 5px 15px rgba(17, 16, 16, 0.205);
@@ -530,11 +500,11 @@ border-radius: 10px;
 filter: drop-shadow(var(--stronger-shadow));
 z-index: 7;
 /* position: relative; */
-width: 100%;
+width: 50%;
 max-width: 60rem;
 height: 5rem;
 margin: 1rem;
-align-self: center;
+align-self: flex-end;
 outline-style: groove;
 outline-style: outset;
 outline-width: 4px;
@@ -553,25 +523,25 @@ border-radius: 10px;
    clip-path: polygon(60% 0%, 60% 15%, 80% 15%, 80% 30%, 55% 30%, 55% 45%, 90% 45%, 90% 60%, 95% 60%, 95% 75%, 90% 75%, 80% 75%, 80% 90%,85% 90%, 85% 100%, 0% 100%, 0% 0%);
 }
 .decoratorWrap{
-    width: 40rem;
-    height: 9rem;
-    margin: 0.5rem;
-    outline-style: groove;
-    outline-style: outset;
-    outline-width: 4px;
-    outline-color: var(--inset-color);
-    border-radius: 10px;
-    filter: drop-shadow(var(--stronger-shadow));
+   width: 25rem;
+height: 9rem;
+margin: 0.5rem;
+outline-style: groove;
+outline-style: outset;
+outline-width: 4px;
+outline-color: var(--inset-color);
+border-radius: 10px;
+filter: drop-shadow(var(--stronger-shadow));
 }
 .decoratorDiv{
     background-color: var(--decor-color-1);
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+   height: 100%;
+   border-radius: 10px;
     /* outline-style: inset; */
     /* z-index: 6; */
     /* position:absolute; */
-    clip-path: polygon(0% 100%, 0% 71%, 14% 71%, 14% 92%, 23% 92%, 23% 100%, 23% 53%, 37% 53%, 37% 98%, 43% 98%, 43% 84%, 53% 84%, 53% 99%, 53% 32%, 71% 32%, 71% 90%, 80% 90%, 80% 53%, 100% 53%, 100% 100%);
+   clip-path: polygon(0% 100%, 0% 71%, 14% 71%, 14% 92%, 23% 92%, 23% 100%, 23% 53%, 37% 53%, 37% 98%, 43% 98%, 43% 84%, 53% 84%, 53% 99%, 53% 32%, 71% 32%, 71% 90%, 80% 90%, 80% 53%, 100% 53%, 100% 100%);
 }
 .analytics-section{
     outline-style: groove;
@@ -658,7 +628,7 @@ border-radius: 10px;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        height: 100%;
+        height: 40rem;
         
     }
     .chartDiv{
@@ -683,7 +653,7 @@ border-radius: 10px;
 .navLinkDiv {
     flex-shrink: 0;
     margin: 1rem;
-    background-color: burlywood;
+     background-color: burlywood;
     border-radius: 10%;
     width: 9rem;
     height: 4rem;

@@ -1,7 +1,7 @@
 import fetchDistricts from "./fetchDistricts";
 
 async function setDistrictOptions( ) {
-    const urlDistricts = "http://localhost/dashboard/ssParser/api/api-districts.php";
+    const urlDistricts = "http://localhost:8000/api/districts";
     
     const options= await fetchDistricts(urlDistricts);
     
