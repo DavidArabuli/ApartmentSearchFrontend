@@ -5,7 +5,7 @@ async function setDistrictOptions( ) {
     
     const options= await fetchDistricts(urlDistricts);
     
-    const selectorOptions = document.querySelector<HTMLSelectElement>("#pagasts-input")!;
+    const selectorOptions = document.querySelector<HTMLSelectElement>("#district-input")!;
     
     const newOptions = Object.values(options)
   .map(value => `<option label="${value}" value="${value}"></option>`)

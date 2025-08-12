@@ -1,5 +1,5 @@
 // import './style.css'
-import setDistrictOptions from './dstrictsOptions.ts';
+import setDistrictOptions from './districtsOptions.ts';
 import { displayItems } from './displayLatest.ts';
 import { setupFormListener } from './formHandler.js';
 import fetchSSitem from './fetchData.js';

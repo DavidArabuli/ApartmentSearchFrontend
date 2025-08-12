@@ -28,8 +28,8 @@ import {z} from 'zod';
 });
   
 const apiResponseSchema = z.object({
-  data: z.array(fetchedItemSchema),  // The array of fetched items
-  pagination: paginationSchema,      // The pagination object
+  data: z.array(fetchedItemSchema),  
+  pagination: paginationSchema,      
 });
 
 export type FetchedItem = z.infer<typeof fetchedItemSchema>;
@@ -45,7 +45,7 @@ async function fetchSSitem(url: string): Promise<ApiResponse> {
       throw new Error(`HTTP error. Status: ${response.status}`);
     }
 
-    const rawData: unknown = await response.json();  // Fetch the raw data
+    const rawData: unknown = await response.json();  
     const result = apiResponseSchema.safeParse(rawData);  // Validate the response with Zod
 
     if (!result.success) {
@@ -60,7 +60,7 @@ async function fetchSSitem(url: string): Promise<ApiResponse> {
     } else {
       console.log('Unexpected error: ', error);
     }
-    // Return a default object in case of an error
+    
     return { data: [], pagination: { current_page: 0, page_limit: 0, total_results: 0, total_pages: 0 } };
   }
 }

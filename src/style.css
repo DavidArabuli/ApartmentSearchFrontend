@@ -480,6 +480,7 @@ border-radius: 10px;
 .welcome-div{
     max-width: 50rem;
     padding: 2rem;
+    height: 100%;
 }
 
 .navLinkDiv {

@@ -18,15 +18,15 @@ export interface AnalyticsData {
     averageM2Price: number;
   };
   mostSalesDistrict: {
-    pagasts: string;
+    district: string;
     offer_count: number;
   }[];
   lowestAveragePriceDistrict: {
-    pagasts: string;
+    district: string;
     average_price: number;
   }[];
   averageM2PriceByDistrict: {
-    pagasts: string;
+    district: string;
     average_m2_price_by_district: number;
   }[];
 }

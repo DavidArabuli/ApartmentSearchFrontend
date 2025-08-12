@@ -5,27 +5,27 @@ const url = "http://localhost:8000/api/listings?";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#filter-form")!;
-    const pagastsInput = document.querySelector<HTMLInputElement>("#pagasts-input");
-    const istabasInput = document.querySelector<HTMLInputElement>("#istabas-input");
+    const districtInput = document.querySelector<HTMLInputElement>("#district-input");
+    const roomsInput = document.querySelector<HTMLInputElement>("#rooms-input");
     const m2MinInput = document.querySelector<HTMLInputElement>("#m2_min-input");
     const m2MaxInput = document.querySelector<HTMLInputElement>("#m2_max-input");
-    const cenaMinInput = document.querySelector<HTMLInputElement>("#cena_min-input");
-    const cenaMaxInput = document.querySelector<HTMLInputElement>("#cena_max-input");
-    const stavsMinInput = document.querySelector<HTMLInputElement>("#stavs_min-input");
-    const stavsMaxInput = document.querySelector<HTMLInputElement>("#stavs_max-input");
+    const priceMinInput = document.querySelector<HTMLInputElement>("#price_min-input");
+    const priceMaxInput = document.querySelector<HTMLInputElement>("#price_max-input");
+    const floorMinInput = document.querySelector<HTMLInputElement>("#floor_min-input");
+    const floorMaxInput = document.querySelector<HTMLInputElement>("#floor_max-input");
 
     form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const queryArray :(string | number)[] = [];
 
-    if (pagastsInput?.value) {
+    if (districtInput?.value) {
 
-        queryArray.push(`district=${encodeURIComponent(pagastsInput.value)}`);
+        queryArray.push(`district=${encodeURIComponent(districtInput.value)}`);
         }
-        if (istabasInput?.value) {
-        const istabasValue = parseInt(istabasInput.value, 10)
-        if(Number.isInteger(istabasValue) && istabasValue >0 &&istabasInput?.value.length < 6){
-        queryArray.push(`rooms=${encodeURIComponent(istabasInput.value)}`);
+        if (roomsInput?.value) {
+        const roomsValue = parseInt(roomsInput.value, 10)
+        if(Number.isInteger(roomsValue) && roomsValue >0 &&roomsInput?.value.length < 6){
+        queryArray.push(`rooms=${encodeURIComponent(roomsInput.value)}`);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -50,41 +50,41 @@ export function setupFormListener() {
             return;
         }
         }
-        if (cenaMinInput?.value) {
-        const cenaMinValue = parseInt(cenaMinInput.value, 10);
-        if(Number.isInteger(cenaMinValue) && cenaMinValue >0 && cenaMinInput?.value.length < 6){
+        if (priceMinInput?.value) {
+        const priceMinValue = parseInt(priceMinInput.value, 10);
+        if(Number.isInteger(priceMinValue) && priceMinValue >0 && priceMinInput?.value.length < 6){
 
-        queryArray.push(`price_min=${encodeURIComponent(cenaMinInput.value)}`);
+        queryArray.push(`price_min=${encodeURIComponent(priceMinInput.value)}`);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
         }
-        if (cenaMaxInput?.value) {
-        const cenaMaxValue = parseInt(cenaMaxInput.value, 10);
-        if(Number.isInteger(cenaMaxValue) && cenaMaxValue >0 && cenaMaxInput?.value.length < 6){
+        if (priceMaxInput?.value) {
+        const priceMaxValue = parseInt(priceMaxInput.value, 10);
+        if(Number.isInteger(priceMaxValue) && priceMaxValue >0 && priceMaxInput?.value.length < 6){
 
-        queryArray.push(`price_max=${encodeURIComponent(cenaMaxInput.value)}`);
+        queryArray.push(`price_max=${encodeURIComponent(priceMaxInput.value)}`);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
     }
-        if (stavsMinInput?.value) {
-        const stavsMinValue = parseInt(stavsMinInput.value, 10);
-        if(Number.isInteger(stavsMinValue) && stavsMinValue >0 && stavsMinInput?.value.length < 6){
+        if (floorMinInput?.value) {
+        const floorMinValue = parseInt(floorMinInput.value, 10);
+        if(Number.isInteger(floorMinValue) && floorMinValue >0 && floorMinInput?.value.length < 6){
 
-        queryArray.push(`floor_min=${encodeURIComponent(stavsMinInput.value)}`);
+        queryArray.push(`floor_min=${encodeURIComponent(floorMinInput.value)}`);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
     }
-        if (stavsMaxInput?.value) {
-        const stavsMaxValue = parseInt(stavsMaxInput.value, 10);
-        if(Number.isInteger(stavsMaxValue) && stavsMaxValue >0 && stavsMaxInput?.value.length < 6){
+        if (floorMaxInput?.value) {
+        const floorMaxValue = parseInt(floorMaxInput.value, 10);
+        if(Number.isInteger(floorMaxValue) && floorMaxValue >0 && floorMaxInput?.value.length < 6){
 
-        queryArray.push(`floor_max=${encodeURIComponent(stavsMaxInput.value)}`);
+        queryArray.push(`floor_max=${encodeURIComponent(floorMaxInput.value)}`);
         }else{
             alert('Input has to be a positive number and less than 9 character long');
             return;

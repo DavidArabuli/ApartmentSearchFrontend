@@ -5,7 +5,7 @@ export function setSeriesOptions( ) {
     
 
     
-    const selectorOptions = document.querySelector<HTMLSelectElement>("#serija-input")!;
+    const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input")!;
     
     const newOptions = Object.values(seriesOptions)
   .map(value => `<option label="${value}" value="${value}"></option>`)

@@ -1,31 +1,40 @@
 
-import setDistrictOptions from './dstrictsOptions.ts';
+import setDistrictOptions from './districtsOptions.ts';
 import setSeriesOptions from './seriesOptions.ts';
 
 // import fetchSSitem from './fetchData.js';
 // import { displayItems } from './displayLatest.ts';
 
-const url = "http://localhost/dashboard/ssParser/api/api-notify.php?";
+const url = "http://localhost:8000/api/notify";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#notify-form")!;
-    const pagastsInput = document.querySelector<HTMLInputElement>("#pagasts-input");
-    const istabasInput = document.querySelector<HTMLInputElement>("#istabas-input");
+    const districtInput = document.querySelector<HTMLInputElement>("#district-input");
+    const roomsInput = document.querySelector<HTMLInputElement>("#rooms-input");
     const m2MinInput = document.querySelector<HTMLInputElement>("#m2_min-input");
     const m2MaxInput = document.querySelector<HTMLInputElement>("#m2_max-input");
-    const cenaMinInput = document.querySelector<HTMLInputElement>("#cena_min-input");
-    const cenaMaxInput = document.querySelector<HTMLInputElement>("#cena_max-input");
-    const stavsMinInput = document.querySelector<HTMLInputElement>("#stavs_min-input");
-    const stavsMaxInput = document.querySelector<HTMLInputElement>("#stavs_max-input");
-    const serijaInput = document.querySelector<HTMLInputElement>("#serija-input");
+    const priceMinInput = document.querySelector<HTMLInputElement>("#price_min-input");
+    const priceMaxInput = document.querySelector<HTMLInputElement>("#price_max-input");
+    const floorMinInput = document.querySelector<HTMLInputElement>("#floor_min-input");
+    const floorMaxInput = document.querySelector<HTMLInputElement>("#floor_max-input");
+    const seriesInput = document.querySelector<HTMLInputElement>("#series-input");
     const email = document.querySelector<HTMLInputElement>("#email");
     const email_confirmation = document.querySelector<HTMLInputElement>("#email_confirmation");
+    const invite_code = document.querySelector<HTMLInputElement>("#invite_code");
  console.log("Email input field: ", email);
  console.log("Max input field: ", m2MaxInput);
 
     form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData();
+    if(!invite_code?.value){
+        console.log('invite code was not provided');
+        
+        alert('Invite code is mandatory!');
+        return;
+    } else{
+        formData.append('invite_code', invite_code.value);
+    }
 
     if(!email?.value){
         console.log('email was not provided');
@@ -37,25 +46,25 @@ export function setupFormListener() {
         if (email?.value !== email_confirmation?.value) {
            alert('Emails do not match!');
            return;
-       }
+       } 
+       formData.append('email', email.value);
+        formData.append('email_confirmation', email_confirmation.value);
 
        // Validate email format
        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
        if (!emailRegex.test(email?.value || '')) {
            alert('Invalid email format!');
            return;
-       } else{
-        formData.append('email', email.value);
-       }
+       } 
     }
-    if (pagastsInput?.value) {
+    if (districtInput?.value) {
 
-        formData.append('pagasts', pagastsInput.value);
+        formData.append('district', districtInput.value);
         }
-    if (istabasInput?.value) {
-        const istabasValue = parseInt(istabasInput.value, 10)
-        if(Number.isInteger(istabasValue) && istabasValue >0 &&istabasInput?.value.length < 6){
-        formData.append('pagasts', istabasInput.value);
+    if (roomsInput?.value) {
+        const roomsValue = parseInt(roomsInput.value, 10)
+        if(Number.isInteger(roomsValue) && roomsValue >0 &&roomsInput?.value.length < 6){
+        formData.append('rooms', roomsInput.value);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -65,7 +74,7 @@ export function setupFormListener() {
         const m2MinValue = parseInt(m2MinInput.value, 10);
         if(Number.isInteger(m2MinValue) && m2MinValue >0 &&m2MinInput?.value.length < 6){
 
-        formData.append('pagasts', m2MinInput.value);
+        formData.append('m2_min', m2MinInput.value);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
@@ -74,70 +83,71 @@ export function setupFormListener() {
     if (m2MaxInput?.value) {
         const m2MaxValue = parseInt(m2MaxInput.value, 10);
         if(Number.isInteger(m2MaxValue) && m2MaxValue >0 && m2MaxInput?.value.length < 6){
-        formData.append('pagasts', m2MaxInput.value);
+        formData.append('m2_max', m2MaxInput.value);
         }else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
         }
-        if (cenaMinInput?.value) {
-        const cenaMinValue = parseInt(cenaMinInput.value, 10);
-        if(Number.isInteger(cenaMinValue) && cenaMinValue >0 && cenaMinInput?.value.length < 6){
+        if (priceMinInput?.value) {
+        const priceMinValue = parseInt(priceMinInput.value, 10);
+        if(Number.isInteger(priceMinValue) && priceMinValue >0 && priceMinInput?.value.length < 6){
 
-        formData.append('pagasts', cenaMinInput.value);
+        formData.append('price_min', priceMinInput.value);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
         }
-        if (cenaMaxInput?.value) {
-        const cenaMaxValue = parseInt(cenaMaxInput.value, 10);
-        if(Number.isInteger(cenaMaxValue) && cenaMaxValue >0 && cenaMaxInput?.value.length < 6){
+        if (priceMaxInput?.value) {
+        const priceMaxValue = parseInt(priceMaxInput.value, 10);
+        if(Number.isInteger(priceMaxValue) && priceMaxValue >0 && priceMaxInput?.value.length < 6){
 
-        formData.append('pagasts', cenaMaxInput.value);
+        formData.append('price_max', priceMaxInput.value);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
     }
-        if (stavsMinInput?.value) {
-        const stavsMinValue = parseInt(stavsMinInput.value, 10);
-        if(Number.isInteger(stavsMinValue) && stavsMinValue >0 && stavsMinInput?.value.length < 6){
+        if (floorMinInput?.value) {
+        const floorMinValue = parseInt(floorMinInput.value, 10);
+        if(Number.isInteger(floorMinValue) && floorMinValue >0 && floorMinInput?.value.length < 6){
 
-        formData.append('pagasts', stavsMinInput.value);
+        formData.append('floor_min', floorMinInput.value);
         } else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
     }
-        if (stavsMaxInput?.value) {
-        const stavsMaxValue = parseInt(stavsMaxInput.value, 10);
-        if(Number.isInteger(stavsMaxValue) && stavsMaxValue >0 && stavsMaxInput?.value.length < 6){
+        if (floorMaxInput?.value) {
+        const floorMaxValue = parseInt(floorMaxInput.value, 10);
+        if(Number.isInteger(floorMaxValue) && floorMaxValue >0 && floorMaxInput?.value.length < 6){
 
-        formData.append('pagasts', stavsMaxInput.value);
+        formData.append('floor_max', floorMaxInput.value);
         }else{
             alert('Input has to be a positive number and less than 9 character long');
             return;
         }
-        if(serijaInput?.value){
-            const serijaValue = serijaInput?.value
-            if(serijaValue.length > 20){
-                alert('invalid input!');
-                return;
-            } else{
-                formData.append('serija', serijaInput.value);
-            }
-        } 
     }
+    if(seriesInput?.value){
+        const seriesValue = seriesInput?.value
+        if(seriesValue.length > 20){
+            alert('invalid input!');
+            return;
+        } else{
+            formData.append('series', seriesInput.value);
+        }
+    } 
     try {
         const response = await fetch(url, {
             method: 'POST',
             body: formData
         })
+        const json = await response.json();
         if (response.ok){
             alert('form submitted successfully!')
         } else {
-            alert('Failed to submit the form!')
+            alert('Failed to submit the form: ' + (json.error || 'Unknown error'));
         }
         
     } catch (error) {
