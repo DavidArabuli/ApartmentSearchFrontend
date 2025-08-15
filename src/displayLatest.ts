@@ -1,5 +1,6 @@
 import {type FetchedItem} from './fetchData'
 
+// displays latest entries
 export function displayItems(latestItems: FetchedItem[]) {
   const newItems = latestItems
     .map((item: FetchedItem) => {

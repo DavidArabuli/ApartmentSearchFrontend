@@ -1,5 +1,5 @@
 import fetchDistricts from "./fetchDistricts";
-
+// sets all possible districts to be selectable as options for user
 async function setDistrictOptions( ) {
     const urlDistricts = "http://localhost:8000/api/districts";
     

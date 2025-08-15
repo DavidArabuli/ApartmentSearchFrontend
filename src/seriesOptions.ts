@@ -2,10 +2,7 @@ export const seriesOptions:string[] = ['','103.','104.','119.','467.','602.','Č
 
 export function setSeriesOptions( ) {
 
-    
-
-    
-    const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input")!;
+  const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input")!;
     
     const newOptions = Object.values(seriesOptions)
   .map(value => `<option label="${value}" value="${value}"></option>`)

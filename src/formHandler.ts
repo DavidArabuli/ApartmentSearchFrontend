@@ -120,11 +120,11 @@ if (pageButtons) {
         pageButtons.append(element);
     }
 
-   
+
     pageButtons.addEventListener('click', async (event) => {
         const target = event.target as HTMLElement;
 
-         
+        
         if (target.tagName === 'A' && target.hasAttribute('data-page')) {
             const pageNumber = target.getAttribute('data-page');
 

@@ -21,8 +21,8 @@ export function setupFormListener() {
     const email = document.querySelector<HTMLInputElement>("#email");
     const email_confirmation = document.querySelector<HTMLInputElement>("#email_confirmation");
     const invite_code = document.querySelector<HTMLInputElement>("#invite_code");
- console.log("Email input field: ", email);
- console.log("Max input field: ", m2MaxInput);
+    console.log("Email input field: ", email);
+    console.log("Max input field: ", m2MaxInput);
 
     form?.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -44,18 +44,18 @@ export function setupFormListener() {
     } else{
 
         if (email?.value !== email_confirmation?.value) {
-           alert('Emails do not match!');
-           return;
-       } 
-       formData.append('email', email.value);
+            alert('Emails do not match!');
+            return;
+        } 
+        formData.append('email', email.value);
         formData.append('email_confirmation', email_confirmation.value);
 
        // Validate email format
-       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-       if (!emailRegex.test(email?.value || '')) {
-           alert('Invalid email format!');
-           return;
-       } 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email?.value || '')) {
+            alert('Invalid email format!');
+            return;
+        } 
     }
     if (districtInput?.value) {
 

@@ -1,6 +1,6 @@
 
 import { AnalyticsData } from './types';  
-
+// retrieves data from analytics API.
 export async function fetchAnalyticsAPI(url: string): Promise<AnalyticsData | null> {
   try {
     const response = await fetch(url);

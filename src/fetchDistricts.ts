@@ -1,5 +1,5 @@
 
- 
+// fetches all possible districts from backend DB. 
 async function fetchDistricts (url:string):Promise<{ [key: string]: string }> {
     try {
         const response = await fetch(url)

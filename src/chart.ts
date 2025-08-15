@@ -13,7 +13,7 @@ export function createChartMostSales() {
     const yValues = mostSalesDistrict?.map((position) => position.offer_count);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 
-    
+    // canvas size
     const ctx = document.createElement('canvas');
     ctx.id = 'myChart';
     ctx.style.width = '100%';
@@ -67,13 +67,11 @@ export function createChartLowestAvg() {
     const yValues = lowestAveragePriceDistrict?.map((position) => Math.round(position.average_price*100)/100);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 
-  
     const ctx = document.createElement('canvas');
     ctx.id = 'myChart';
     ctx.style.width = '100%';
     ctx.style.maxWidth = '800px';
 
-   
     chartContainerLowestAvg.appendChild(ctx);
 
     
@@ -120,13 +118,11 @@ export function createChartAvgM2PriceByDistrict() {
     const yValues = averageM2PriceByDistrict?.map((position) => Math.round(position.average_m2_price_by_district *100)/100);
     const barColors = ["red", "green", "blue", "pink", "brown", "orange", "purple", "aqua", "lime"];
 
-  
     const ctx = document.createElement('canvas');
     ctx.id = 'myChart';
     ctx.style.width = '100%';
     ctx.style.maxWidth = '800px';
 
-   
     chartContainerAvgM2PriceByDistrict.appendChild(ctx);
 
     
