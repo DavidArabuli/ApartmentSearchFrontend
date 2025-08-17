@@ -1,11 +1,12 @@
 
 import setDistrictOptions from './districtsOptions.ts';
 import setSeriesOptions from './seriesOptions.ts';
+import { notify_api_url } from './config.ts';
 
 // import fetchSSitem from './fetchData.js';
 // import { displayItems } from './displayLatest.ts';
 
-const url = "http://localhost:8000/api/notify";
+// const url = "http://localhost:8000/api/notify";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#notify-form")!;
@@ -139,7 +140,7 @@ export function setupFormListener() {
         }
     } 
     try {
-        const response = await fetch(url, {
+        const response = await fetch(notify_api_url, {
             method: 'POST',
             body: formData
         })
@@ -166,30 +167,3 @@ export function setupFormListener() {
 setupFormListener()
 setDistrictOptions()
 setSeriesOptions()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

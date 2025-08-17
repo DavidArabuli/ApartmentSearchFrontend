@@ -1,7 +1,8 @@
 import fetchSSitem from './fetchData.js';
 import { displayItems } from './displayLatest.ts';
+import {listings_api_url} from "./config";
 
-const url = "http://localhost:8000/api/listings?";
+// const url = "http://localhost:8000/api/listings?";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#filter-form")!;
@@ -92,7 +93,7 @@ export function setupFormListener() {
     }
     
     
-    const fullQueryUrl = `${url}${queryArray.join("&")}`;
+    const fullQueryUrl = `${listings_api_url}${queryArray.join("&")}`;
     console.log(fullQueryUrl);
     
     try {

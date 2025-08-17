@@ -1,9 +1,9 @@
 import fetchDistricts from "./fetchDistricts";
+import {districts_api_url} from "./config";
 // sets all possible districts to be selectable as options for user
 async function setDistrictOptions( ) {
-    const urlDistricts = "http://localhost:8000/api/districts";
     
-    const options= await fetchDistricts(urlDistricts);
+    const options= await fetchDistricts(districts_api_url);
     
     const selectorOptions = document.querySelector<HTMLSelectElement>("#district-input")!;
     
