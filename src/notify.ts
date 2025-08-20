@@ -64,7 +64,7 @@ export function setupFormListener() {
         }
     if (roomsInput?.value) {
         const roomsValue = parseInt(roomsInput.value, 10)
-        if(Number.isInteger(roomsValue) && roomsValue >0 &&roomsInput?.value.length < 6){
+        if(Number.isInteger(roomsValue) && roomsValue >0 &&roomsInput?.value.length < 9){
         formData.append('rooms', roomsInput.value);
         } else {
             alert('Input has to be a positive number and less than 9 character long');
@@ -73,7 +73,7 @@ export function setupFormListener() {
     }
     if (m2MinInput?.value) {
         const m2MinValue = parseInt(m2MinInput.value, 10);
-        if(Number.isInteger(m2MinValue) && m2MinValue >0 &&m2MinInput?.value.length < 6){
+        if(Number.isInteger(m2MinValue) && m2MinValue >0 &&m2MinInput?.value.length < 9){
 
         formData.append('m2_min', m2MinInput.value);
         } else {
@@ -83,7 +83,7 @@ export function setupFormListener() {
     }
     if (m2MaxInput?.value) {
         const m2MaxValue = parseInt(m2MaxInput.value, 10);
-        if(Number.isInteger(m2MaxValue) && m2MaxValue >0 && m2MaxInput?.value.length < 6){
+        if(Number.isInteger(m2MaxValue) && m2MaxValue >0 && m2MaxInput?.value.length < 9){
         formData.append('m2_max', m2MaxInput.value);
         }else {
             alert('Input has to be a positive number and less than 9 character long');
@@ -92,7 +92,7 @@ export function setupFormListener() {
         }
         if (priceMinInput?.value) {
         const priceMinValue = parseInt(priceMinInput.value, 10);
-        if(Number.isInteger(priceMinValue) && priceMinValue >0 && priceMinInput?.value.length < 6){
+        if(Number.isInteger(priceMinValue) && priceMinValue >0 && priceMinInput?.value.length < 9){
 
         formData.append('price_min', priceMinInput.value);
         } else {
@@ -102,7 +102,7 @@ export function setupFormListener() {
         }
         if (priceMaxInput?.value) {
         const priceMaxValue = parseInt(priceMaxInput.value, 10);
-        if(Number.isInteger(priceMaxValue) && priceMaxValue >0 && priceMaxInput?.value.length < 6){
+        if(Number.isInteger(priceMaxValue) && priceMaxValue >0 && priceMaxInput?.value.length < 9){
 
         formData.append('price_max', priceMaxInput.value);
         } else{
@@ -112,7 +112,7 @@ export function setupFormListener() {
     }
         if (floorMinInput?.value) {
         const floorMinValue = parseInt(floorMinInput.value, 10);
-        if(Number.isInteger(floorMinValue) && floorMinValue >0 && floorMinInput?.value.length < 6){
+        if(Number.isInteger(floorMinValue) && floorMinValue >0 && floorMinInput?.value.length < 9){
 
         formData.append('floor_min', floorMinInput.value);
         } else{
@@ -122,7 +122,7 @@ export function setupFormListener() {
     }
         if (floorMaxInput?.value) {
         const floorMaxValue = parseInt(floorMaxInput.value, 10);
-        if(Number.isInteger(floorMaxValue) && floorMaxValue >0 && floorMaxInput?.value.length < 6){
+        if(Number.isInteger(floorMaxValue) && floorMaxValue >0 && floorMaxInput?.value.length < 9){
 
         formData.append('floor_max', floorMaxInput.value);
         }else{
