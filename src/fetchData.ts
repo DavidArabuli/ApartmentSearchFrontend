@@ -13,7 +13,7 @@ import {z} from 'zod';
     street: z.string(),
     rooms: z.number(),
     m2: z.number(),
-    floor: z.string(),
+    floor: z.number(),
     series: z.string(),
     price: z.number(),
     hash: z.string(),
