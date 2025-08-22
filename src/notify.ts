@@ -140,21 +140,29 @@ export function setupFormListener() {
         }
     } 
     try {
-        const response = await fetch(notify_api_url, {
-            method: 'POST',
-            body: formData
-        })
-        const json = await response.json();
-        if (response.ok){
-            alert('form submitted successfully!')
+    const response = await fetch(notify_api_url, {
+        method: 'POST',
+        body: formData
+    });
+
+    const json = await response.json();
+
+    if (response.ok) {
+        alert('Form submitted successfully!');
+    } else {
+        if (json.duplicate) {
+            
+            alert('This favorite already exists in a database!');
         } else {
-            alert('Failed to submit the form: ' + (json.error || 'Unknown error'));
+            alert('Failed to submit the form: ' + (json.message || 'Unknown error'));
         }
-        
-    } catch (error) {
-        console.error('Error submitting form:', error);
-            alert('An error occurred while submitting the form.');
     }
+
+} catch (error) {
+    console.error('Error submitting form:', error);
+    alert('An error occurred while submitting the form.');
+}
+
     
     
     
