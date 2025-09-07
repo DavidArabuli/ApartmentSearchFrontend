@@ -46,7 +46,7 @@ async function fetchSSitem(url: string): Promise<ApiResponse> {
     }
 
     const rawData: unknown = await response.json();  
-    const result = apiResponseSchema.safeParse(rawData);  // Validate the response with Zod
+    const result = apiResponseSchema.safeParse(rawData);
 
     if (!result.success) {
       throw new Error(`Invalid data: ${result.error}`);
