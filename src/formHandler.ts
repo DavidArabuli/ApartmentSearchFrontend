@@ -1,8 +1,6 @@
 import fetchSSitem from './fetchData.js';
-import { displayItems } from './displayLatest.ts';
+import { displayItems } from './displayLatest';
 import {listings_api_url} from "./config";
-
-// const url = "http://localhost:8000/api/listings?";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#filter-form")!;

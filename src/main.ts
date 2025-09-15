@@ -1,8 +1,8 @@
 // import './style.css'
-import setDistrictOptions from './districtsOptions.ts';
-import { displayItems } from './displayLatest.ts';
+import setDistrictOptions from './districtsOptions';
+import { displayItems } from './displayLatest';
 import { setupFormListener } from './formHandler.js';
-import { listings_api_url } from './config.ts';
+import { listings_api_url } from './config';
 import fetchSSitem from './fetchData.js';
 
 // const url = "http://localhost:8000/api/listings";

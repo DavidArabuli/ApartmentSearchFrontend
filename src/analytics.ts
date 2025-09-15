@@ -3,7 +3,7 @@ import {analytics_api_url} from "./config";
 
 // import './style.css'
 
-const analyticsSection = document.querySelector<HTMLElement>('#analytics-section')!;
+// const analyticsSection = document.querySelector<HTMLElement>('#analytics-section')!;
 const analyticsDiv = document.querySelector<HTMLDivElement>('.analytics-info')!;
 // const url = 'http://localhost:8000/api/analytics';
 

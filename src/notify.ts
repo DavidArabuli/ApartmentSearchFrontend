@@ -1,7 +1,7 @@
 
-import setDistrictOptions from './districtsOptions.ts';
-import setSeriesOptions from './seriesOptions.ts';
-import { notify_api_url } from './config.ts';
+import setDistrictOptions from './districtsOptions';
+import setSeriesOptions from './seriesOptions';
+import { notify_api_url } from './config';
 
 // import fetchSSitem from './fetchData.js';
 // import { displayItems } from './displayLatest.ts';
