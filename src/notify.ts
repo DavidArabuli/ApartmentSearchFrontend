@@ -1,12 +1,7 @@
-
 import setDistrictOptions from './districtsOptions';
 import setSeriesOptions from './seriesOptions';
 import { notify_api_url } from './config';
 
-// import fetchSSitem from './fetchData.js';
-// import { displayItems } from './displayLatest.ts';
-
-// const url = "http://localhost:8000/api/notify";
 
 export function setupFormListener() {
     const form = document.querySelector<HTMLFormElement>("#notify-form")!;
@@ -18,12 +13,11 @@ export function setupFormListener() {
     const priceMaxInput = document.querySelector<HTMLInputElement>("#price_max-input");
     const floorMinInput = document.querySelector<HTMLInputElement>("#floor_min-input");
     const floorMaxInput = document.querySelector<HTMLInputElement>("#floor_max-input");
-    const seriesInput = document.querySelector<HTMLInputElement>("#series-input");
+    // to do, when series gets added
+    // const seriesInput = document.querySelector<HTMLInputElement>("#series-input");
     const email = document.querySelector<HTMLInputElement>("#email");
     const email_confirmation = document.querySelector<HTMLInputElement>("#email_confirmation");
     const invite_code = document.querySelector<HTMLInputElement>("#invite_code");
-    console.log("Email input field: ", email);
-    console.log("Max input field: ", m2MaxInput);
 
     form?.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -130,15 +124,16 @@ export function setupFormListener() {
             return;
         }
     }
-    if(seriesInput?.value){
-        const seriesValue = seriesInput?.value
-        if(seriesValue.length > 20){
-            alert('invalid input!');
-            return;
-        } else{
-            formData.append('series', seriesInput.value);
-        }
-    } 
+    // to do, when series gets added
+    // if(seriesInput?.value){
+    //     const seriesValue = seriesInput?.value
+    //     if(seriesValue.length > 20){
+    //         alert('invalid input!');
+    //         return;
+    //     } else{
+    //         formData.append('series', seriesInput.value);
+    //     }
+    // } 
     try {
     const response = await fetch(notify_api_url, {
         method: 'POST',
@@ -172,6 +167,8 @@ export function setupFormListener() {
 });
 }
 
-setupFormListener()
-setDistrictOptions()
-setSeriesOptions()
+document.addEventListener("DOMContentLoaded", () => {
+    setupFormListener();
+    setDistrictOptions();
+    setSeriesOptions();
+});

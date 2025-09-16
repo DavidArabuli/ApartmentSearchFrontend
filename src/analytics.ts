@@ -1,15 +1,11 @@
 import { fetchAnalyticsAPI } from './fetchAnalyticsAPI';
 import {analytics_api_url} from "./config";
 
-// import './style.css'
 
-// const analyticsSection = document.querySelector<HTMLElement>('#analytics-section')!;
 const analyticsDiv = document.querySelector<HTMLDivElement>('.analytics-info')!;
-// const url = 'http://localhost:8000/api/analytics';
 
-// Fetch data from the API
+
 const data = await fetchAnalyticsAPI(analytics_api_url);
-console.log(data);
 
 // Create and append "average m2" section
 
@@ -67,6 +63,5 @@ analyticsDiv.appendChild(averageM2PriceDiv);
 export const mostSalesDistrict = data?.mostSalesDistrict;
 export const lowestAveragePriceDistrict = data?.lowestAveragePriceDistrict;
 export const averageM2PriceByDistrict = data?.averageM2PriceByDistrict;
-console.log(lowestAveragePriceDistrict);
 
 

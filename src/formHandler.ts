@@ -96,16 +96,12 @@ export function setupFormListener() {
     
     try {
         const filteredResults = await fetchSSitem(fullQueryUrl);
-        console.log(filteredResults);
-
-        console.log(fullQueryUrl);
         displayItems(filteredResults.data)
 
         const pageButtons = document.querySelector<HTMLDivElement>('#page-btns')!;
 
 if (pageButtons) {
     pageButtons.innerHTML = '';
-    console.log(pageButtons);
 
     let pageCount: number|string = filteredResults.pagination.total_pages;
 
@@ -139,9 +135,6 @@ if (pageButtons) {
             
             pageButtons.classList.remove('disabled');
         }
-            // const newItems = await fetchSSitem(newLink);
-            // console.log(newItems.data);
-            // displayItems(newItems.data);
         }
     });
 }

@@ -1,16 +1,26 @@
 export const seriesOptions:string[] = ['','103.','104.','119.','467.','602.','Čehu pr.', 'Hrušč.', 'LT proj.', 'M. Ģim.', 'P. kara' , 'Priv. m.','Renov.','Specpr.','Staļina','Jaun.']
 
-export function setSeriesOptions( ) {
+export function setSeriesOptions() {
+    const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input");
+    if (!selectorOptions) return; 
+    const newOptions = seriesOptions
+        .map(value => `<option label="${value}" value="${value}"></option>`)
+        .join('');
 
-  const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input")!;
-    
-    const newOptions = Object.values(seriesOptions)
-  .map(value => `<option label="${value}" value="${value}"></option>`)
-  .join('');
-    
-    
-        selectorOptions.innerHTML = newOptions;
-    
+    selectorOptions.innerHTML = newOptions;
 }
+
+// export function setSeriesOptions( ) {
+
+//   const selectorOptions = document.querySelector<HTMLSelectElement>("#series-input")!;
+    
+//     const newOptions = Object.values(seriesOptions)
+//   .map(value => `<option label="${value}" value="${value}"></option>`)
+//   .join('');
+    
+    
+//         selectorOptions.innerHTML = newOptions;
+    
+// }
 
 export default setSeriesOptions

@@ -106,7 +106,6 @@ export function createChartLowestAvg() {
     });
 }
 export function createChartAvgM2PriceByDistrict() {
-    console.log(averageM2PriceByDistrict);
     const chartContainerAvgM2PriceByDistrict = document.getElementById('chartContainerAvgM2PriceByDistrict');
     
     if (!chartContainerAvgM2PriceByDistrict) {

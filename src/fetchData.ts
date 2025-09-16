@@ -52,7 +52,6 @@ async function fetchSSitem(url: string): Promise<ApiResponse> {
       throw new Error(`Invalid data: ${result.error}`);
     }
 
-    console.log(result.data.data);
     return result.data;
   } catch (error) {
     if (error instanceof Error) {
