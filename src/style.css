@@ -86,7 +86,24 @@ img {
     justify-content: center;
     align-items: center; 
 }
-
+.latest-title{
+    outline-style: groove;
+    outline-style: outset;
+    outline-width: 1px;
+    outline-color: rgb(241, 218, 187);
+    border-radius: 10px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row; 
+    width: 10rem;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: larger;
+    justify-content: space-between;
+    padding: 0.5rem; 
+    box-shadow: 7px 7px 5px darkgray;
+    background-color: var(--calm-element-background);
+}
 .nav-link {
     
     background-color: burlywood;
