@@ -18,6 +18,8 @@ export function createChartMostSales() {
     ctx.id = 'myChart';
     ctx.style.width = '100%';
     ctx.style.maxWidth = '800px';
+    ctx.style.height = '800px'
+    
 
    
     chartContainerMostSales.appendChild(ctx);
@@ -71,6 +73,7 @@ export function createChartLowestAvg() {
     ctx.id = 'myChart';
     ctx.style.width = '100%';
     ctx.style.maxWidth = '800px';
+    ctx.style.height = '800px'
 
     chartContainerLowestAvg.appendChild(ctx);
 
@@ -121,6 +124,7 @@ export function createChartAvgM2PriceByDistrict() {
     ctx.id = 'myChart';
     ctx.style.width = '100%';
     ctx.style.maxWidth = '800px';
+    ctx.style.height = '800px'
 
     chartContainerAvgM2PriceByDistrict.appendChild(ctx);
 
